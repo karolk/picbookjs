@@ -1,98 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>picbook.js example</title>
-        
-        <meta charset="utf-8">
-        <meta name="description" content="A Simple Javascript Library To Display Album Photos From A Facebook Page.">
-        <meta name="keywords" content="library,open source, github, javascript,js,facebook, album, photos">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Picbookjs by henriquea</title>
 
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400">
-        <link rel="stylesheet" type="text/css" href="css/iconset/mfglabs_iconset.css">
-        <link rel="stylesheet" type="text/css" href="css/picbook.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Picbookjs</h1>
+        <p>A simple Javascript library to display album photos from a Facebook page</p>
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/picbook.js"></script>
-            
-        <script>
-        
-            picbook.init({
-                id: '10150167782373951',
-                limit: 22,
-                start: function(){
-                    var album = picbook.album;
-                     $('.picbook-title', '#picbook')
-                        .append('<h3><a href="'+album.link+'" title="'+album.name+'">' + album.name +'</a></h3>')
-                        .append('<div class="date"><i class="icon-clock"></i> ' + picbook.format(album.created_time) + "</div>")
-                        .append('<div class="from"><i class="icon-user"></i> ' + album.from.name + "</div>")
-                        .addClass('fade');
-                    $('.picbook-loader','#picbook').fadeIn();
-                },
-                done: function(){
-                    var photos = picbook.photos,
-                        li = undefined;
-                    $('.picbook-loader','#picbook').remove();
-                    for (var i=0; i<photos.length; i++) {
-                        li = '<li class="' + photos[i].id + '"><a href="'+photos[i].link+'"><img src="' + photos[i].images[6].source + '"></a></li>';
-                        $('.picbook-thumbs', '#picbook')
-                            .append(li);
-                    }
-                    $('.picbook-thumbs li','#picbook').each(function(index){
-                        $(this)
-                            .delay(index*88)
-                            .hide()
-                            .fadeIn();
-                    });
-                }
-            });
-        </script>
-
-        <style type="text/css">
-            
-            body {
-                padding: 0;
-                margin: 0;
-                font: 300 80% 'Open Sans', sans-serif;
-                color: white;
-                background-color: #fcfcfc;
-            }
-
-            a {
-                opacity: 1;
-                -o-transition-property: all;
-                -webkit-transition-property: all;
-                -moz-transition-property: all;
-                transition-property: all;
-                -o-transition-duration: .35s;
-                -webkit-transition-duration: .35s;
-                -moz-transition-duration: .35s;
-                transition-duration: .35s;
-            }
-
-            .wrap {
-                width: 960px;
-                margin: 0 auto;
-            }
-
-            .picbook-thumbs a:hover{
-                opacity: .6;
-            }
-        </style>
-
-    </head>
-
-    <body>
-
-        <section class="wrap">
-            <section id="picbook">
-                <div class="picbook-title"></div>
-                <div class="picbook-loader"><img src="images/loader.gif"></div>
-                <div class="picbook-photos">
-                    <ul class="picbook-thumbs"></ul>
-                </div>
-            </section>
-        </section>
+        <p class="view"><a href="https://github.com/henriquea/picbookjs">View the Project on GitHub <small>henriquea/picbookjs</small></a></p>
 
 
-    </body>
+        <ul>
+          <li><a href="https://github.com/henriquea/picbookjs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/henriquea/picbookjs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/henriquea/picbookjs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/henriquea">henriquea</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
 </html>
