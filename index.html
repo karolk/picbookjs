@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>picbook.js</title>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="A Simple Javascript Library To Display Album Photos From A Facebook Page.">
+        <meta name="keywords" content="library,open source, github, javascript,js,facebook, album, photos">
+
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico">
+        <link rel="stylesheet" type="text/css" href="css/iconset/mfglabs_iconset.css">
+        <link rel="stylesheet" type="text/css" href="css/page.css">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <header>
+            <h1>picbook.js</h1>
+            <h2>A Simple Javascript Library To Display Album Photos From A Facebook Page.</h2>
+            <div class="buttons">
+                <a href="#" class="download-zip" title="Download ZIP">Download</a>
+                <a href="#" class="github" title="GitHub">GitHub</a>
+            </div>
+        </header>
+
+        <section class="wrap">
+            <section class="picbook-example">
+                <a href="example.html" title="Preview Example" class="link-example">
+                    <img src="images/preview.jpg">
+                </a>
+            </section>
+        </section>
+
+        <section class="usage">
+            <article class="instructions">
+                <h3>Instructions</h3>
+                <p>You will need to include is the picbook.js. You can also include the example.css and customise yourself. Example:</p>
+            </article>
+            <a href="http://twitter.com/henrique_a" title="@henrique_a" class="twitter"><i class="icon-twitter"></i></a>
+        </section>
+
+        <script>
+            (function(d){
+                $('h1').css('opacity',1).hide().fadeIn();
+                $('h2').css('opacity',1).hide().delay(300).fadeIn();
+                $('.buttons').css('opacity',1).hide().delay(500).fadeIn();
+                $('.picbook-example').css('opacity',1).hide().delay(700).fadeIn();
+           })(document);
+        </script>
+
+    </body>
+</html>
