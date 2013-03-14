@@ -1,7 +1,7 @@
 picbookjs
 =========
 
-A simple Javascript library to display album photos from a Facebook page.
+A simple Javascript library to display album photos from a Facebook Page.
 
 ## Instructions
 
@@ -22,7 +22,7 @@ You will need to include the ```picbook.js```. You can also include the ```examp
 </html>
 ```
 
-Initialise the library right after the include, replace the ```id``` for your Facebook Album ID.
+Initialise the library after the include, replace the ```id``` for your Facebook Album ID.
 
 ```html
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ picbook.init({
     
 ### Response
 
-The library use the Facebook Graph API and returns the following objects:
+The library uses the Facebook Graph API and returns the following objects:
 
 **[picbook.album](https://developers.facebook.com/docs/reference/api/album/)**
 
@@ -81,9 +81,15 @@ The library use the Facebook Graph API and returns the following objects:
 
 ## Questions?
 
-Where do I get the album ID?
+### Where do I get the album ID?
+
+Simply go to an album page and copy the ID from the address bar URL ```?set=a.{ID}```
 
 ![Image](http://f.cl.ly/items/2s0L3f430q2l1I11101K/fb-album-id.gif)
+
+### How about read an album that belongs to a User?
+
+Not possible with this library. A user_photo [permission](https://developers.facebook.com/docs/reference/login/#permissions) is required which means you would have to create a Facebook app and implement the Facebook Login.
 
 ## Demo
 
