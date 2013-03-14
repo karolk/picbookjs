@@ -85,3 +85,7 @@ Where do I get the album ID?
 
 ![Image](http://f.cl.ly/items/2s0L3f430q2l1I11101K/fb-album-id.gif)
 
+## Demo
+
+View live [demo](http://henriquea.github.com/picbookjs/example.html).
+
