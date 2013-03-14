@@ -1,0 +1,73 @@
+
+#picbook {
+    position: relative;
+}
+
+#picbook .picbook-title {
+    float: left;
+    width: 320px;
+    height: 135px;
+    background-color: #365d98;
+    color: white;
+    opacity: 0;
+    /* improve the readibility on webkit */
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(255,255,255,0.01) 0 0 1px;
+}
+
+#picbook .picbook-title.fade {
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    opacity: .99;
+}
+
+#picbook .picbook-title h3 {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.4em;
+}
+
+#picbook .picbook-title a {
+    display: block;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+}
+
+#picbook .picbook-title .from,
+#picbook .picbook-title .date {
+    padding-left: 30px;
+    opacity: .7;
+    font-weight: 400;
+    
+}
+
+#picbook .picbook-loader {
+    position: absolute;
+    margin: 6px 0 0 330px;
+    display: none;
+}
+
+#picbook .picbook-thumbs {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#picbook .picbook-thumbs li {
+    display: inline;
+    position: relative;
+    float: left;
+    width: 160px;
+    height: 135px;
+    overflow: hidden;
+    background-color: #282830;
+}
+
+#picbook .picbook-thumbs li img {
+    position: absolute;
+    display: block;
+    clip: rect(0, 160px, 135px, 0);
+}

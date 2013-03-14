@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>picbook.js example</title>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="A Simple Javascript Library To Display Album Photos From A Facebook Page.">
+        <meta name="keywords" content="library,open source, github, javascript,js,facebook, album, photos">
+
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400">
+        <link rel="stylesheet" type="text/css" href="css/iconset/mfglabs_iconset.css">
+        <link rel="stylesheet" type="text/css" href="css/picbook.css">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/picbook.js"></script>
+            
+        <script>
+        
+            picbook.init({
+                id: '10150167782373951',
+                limit: 22,
+                start: function(){
+                    var album = picbook.album;
+                     $('.picbook-title', '#picbook')
+                        .append('<h3><a href="'+album.link+'" title="'+album.name+'">' + album.name +'</a></h3>')
+                        .append('<div class="date"><i class="icon-clock"></i> ' + picbook.format(album.created_time) + "</div>")
+                        .append('<div class="from"><i class="icon-user"></i> ' + album.from.name + "</div>")
+                        .addClass('fade');
+                    $('.picbook-loader','#picbook').fadeIn();
+                },
+                done: function(){
+                    var photos = picbook.photos,
+                        li = undefined;
+                    $('.picbook-loader','#picbook').remove();
+                    for (var i=0; i<photos.length; i++) {
+                        li = '<li class="' + photos[i].id + '"><a href="'+photos[i].link+'"><img src="' + photos[i].images[6].source + '"></a></li>';
+                        $('.picbook-thumbs', '#picbook')
+                            .append(li);
+                    }
+                    $('.picbook-thumbs li','#picbook').each(function(index){
+                        $(this)
+                            .delay(index*88)
+                            .hide()
+                            .fadeIn();
+                    });
+                }
+            });
+        </script>
+
+        <style type="text/css">
+            
+            body {
+                padding: 0;
+                margin: 0;
+                font: 300 80% 'Open Sans', sans-serif;
+                color: white;
+                background-color: #fcfcfc;
+            }
+
+            a {
+                opacity: 1;
+                -o-transition-property: all;
+                -webkit-transition-property: all;
+                -moz-transition-property: all;
+                transition-property: all;
+                -o-transition-duration: .35s;
+                -webkit-transition-duration: .35s;
+                -moz-transition-duration: .35s;
+                transition-duration: .35s;
+            }
+
+            .wrap {
+                width: 960px;
+                margin: 0 auto;
+            }
+
+            .picbook-thumbs a:hover{
+                opacity: .6;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <section class="wrap">
+            <section id="picbook">
+                <div class="picbook-title"></div>
+                <div class="picbook-loader"><img src="images/loader.gif"></div>
+                <div class="picbook-photos">
+                    <ul class="picbook-thumbs"></ul>
+                </div>
+            </section>
+        </section>
+
+
+    </body>
+</html>
