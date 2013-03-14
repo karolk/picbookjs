@@ -11,13 +11,13 @@ You will need to include the ```picbook.js```. You can also include the ```examp
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-	<title></title>
-        <script src="picbook.js"></script>
-    </head>
-    
-    <body>
-    </body>
+<head>
+<title></title>
+    <script src="picbook.js"></script>
+</head>
+
+<body>
+</body>
     
 </html>
 ```
@@ -28,30 +28,30 @@ Initialise the library right after the include, replace the ```id``` for your Fa
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title></title>
+<head>
+    <title></title>
 
-        <script src="picbook.js"></script>
-        <script>
-            picbook.init({
-                id: '10150167782373951',
-                limit: 22,
-                start: function(){
-                    // album is loaded
-                    var album = picbook.album;
-                    ...
-                },
-                done: function(){
-                    // photos are loaded
-                    var photos = picbook.photos;
-                    ...
-                }
-            });
-        </script>
-    </head>
+    <script src="picbook.js"></script>
+    <script>
+        picbook.init({
+            id: '10150167782373951',
+            limit: 22,
+            start: function(){
+                // album is loaded
+                var album = picbook.album;
+                ...
+            },
+            done: function(){
+                // photos are loaded
+                var photos = picbook.photos;
+                ...
+            }
+        });
+    </script>
+</head>
 
-    <body>
-    </body>
+<body>
+</body>
 
 </html>
 ```
